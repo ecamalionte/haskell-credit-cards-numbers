@@ -6,25 +6,15 @@ import Data.Char
 -- Lab 2: Validating Credit Card Numbers
 ------------------------------------------------------------------------------------------------------------------------------
 
--- ===================================
--- Ex. 0
--- ===================================
 digitToInteger :: Char -> Integer
 digitToInteger = toInteger . digitToInt
 
 toDigits :: Integer -> [Integer]
 toDigits n = [ digitToInteger x | x <- xs ] where xs = show n
 
--- ===================================
--- Ex. 1
--- ===================================
 
 toDigitsRev :: Integer -> [Integer]
 toDigitsRev = reverse . toDigits
-
--- ===================================
--- Ex. 2
--- ===================================
 
 doubleSecond :: [Integer] -> [Integer]
 doubleSecond [] = []
@@ -36,27 +26,16 @@ getDigits :: [Integer] -> [Integer]
 getDigits [] = []
 getDigits (x:xs) = toDigits x ++ getDigits xs
 
--- ===================================
--- Ex. 3
--- ===================================
-
 sumDigits :: [Integer] -> Integer
 sumDigits = sum . getDigits
 
 
--- ===================================
--- Ex. 4
--- ===================================
 isModTen :: Integer -> Bool
 isModTen x = x `mod` 10 == 0
 
 isValid :: Integer -> Bool
 isValid = isModTen . sumDigits . doubleSecond . toDigitsRev
 
-
--- ===================================
--- Ex. 5
--- ===================================
 
 numValid :: [Integer] -> Integer
 numValid xs = sum . map (\_ -> 1) $ filter isValid xs
