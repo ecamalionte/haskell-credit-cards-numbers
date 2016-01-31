@@ -1,9 +1,9 @@
-module Lab2 where
+module CreditCardValidator where
 
 import Data.Char
 
 ------------------------------------------------------------------------------------------------------------------------------
--- Lab 2: Validating Credit Card Numbers
+-- CreditCardValidator: Validating Credit Card Numbers
 ------------------------------------------------------------------------------------------------------------------------------
 
 digitToInteger :: Char -> Integer

@@ -19,5 +19,14 @@ Result: 0.
 
 Since the final value is 0, we know that the above number is a valid credit card number. If we make a mistake in typing the credit card number and instead provide 4012888888881891, then the result of the last step is 2, proving that the number is invalid.
 
-#TODO
-- Improve this readme with examples
+#USAGE
+$ ghci credit-cards-validator.hs
+GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling CreditCardValidator ( credit-cards-validator.hs, interpreted )
+Ok, modules loaded: CreditCardValidator.
+*CreditCardValidator> isValid 123
+False
+*CreditCardValidator> isValid 4716347184862961
+True
+*CreditCardValidator> numValid creditcards
+94
