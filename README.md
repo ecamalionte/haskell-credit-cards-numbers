@@ -1,4 +1,5 @@
 # Haskell - Validating Credit Card Number
+
 Have you ever wondered how websites validate your credit card number when you shop online? They don’t check a massive database of numbers, and they don’t use magic. In fact, most credit providers rely on a checksum formula for distinguishing valid numbers from random collection of digits (or typing mistakes).
 
 In this lab, you will implement a validation algorithm for credit cards. The algorithm follows these steps:
@@ -19,14 +20,21 @@ Result: 0.
 
 Since the final value is 0, we know that the above number is a valid credit card number. If we make a mistake in typing the credit card number and instead provide 4012888888881891, then the result of the last step is 2, proving that the number is invalid.
 
-#USAGE
-$ ghci credit-cards-validator.hs
-GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
-[1 of 1] Compiling CreditCardValidator ( credit-cards-validator.hs, interpreted )
-Ok, modules loaded: CreditCardValidator.
-*CreditCardValidator> isValid 123
-False
-*CreditCardValidator> isValid 4716347184862961
-True
-*CreditCardValidator> numValid creditcards
-94
+## Usage
+```
+   $ ghci credit-cards-validator.hs
+   GHCi, version 7.10.2: http://www.haskell.org/ghc/  :? for help
+   [1 of 1] Compiling CreditCardValidator ( credit-cards-validator.hs, interpreted )
+   Ok, modules loaded: CreditCardValidator.
+
+
+   CreditCardValidator> isValid 123
+   False
+
+   CreditCardValidator> isValid 4716347184862961
+   True
+
+   CreditCardValidator> numValid creditcards
+   94
+
+```
